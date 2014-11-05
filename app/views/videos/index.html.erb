@@ -2,5 +2,5 @@
 
 <% @videos.each do |video| %>
   <p><%= video[:title] %>, <%= video[:artist] %></p>
-  <img src="<%= video[:url] %>">
+  <iframe width="560" height="315" src="<%= convert_url(video[:url]) %>" frameborder="0" allowfullscreen></iframe>  
 <% end %>
