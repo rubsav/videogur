@@ -1,0 +1,6 @@
+<h1> Videos </h1>
+
+<% @videos.each do |video| %>
+  <p><%= video[:title] %>, <%= video[:artist] %></p>
+  <img src="<%= video[:url] %>">
+<% end %>
