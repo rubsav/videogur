@@ -1,45 +1,19 @@
 class VideosController < ApplicationController
 
 	def index
-		@videos = [
-			{
-				:title  => "She Knows",
-				:artist => "Jermaine Cole",
-				:url    => "https://www.youtube.com/watch?v=jYdaQJzcAcw"
-				},
-				{
-					:title  => "Crooked Smile",
-					:artist => "Jermaine Cole",
-					:url    => "https://www.youtube.com/watch?v=fzzMOMkjm8A"
-					},
-					{
-						:title  => "Can't get enough",
-						:artist => "Jermaine Cole",
-						:url    => "https://www.youtube.com/watch?v=p0L4lA6bS2E"
-					}
-				]
+		@videos = Video.all
 	end
 
 	def show
-		@videos = [
-			{
-				:title  => "She Knows",
-				:artist => "Jermaine Cole",
-				:url    => "https://www.youtube.com/watch?v=jYdaQJzcAcw"
-				},
-				{
-					:title  => "Crooked Smile",
-					:artist => "Jermaine Cole",
-					:url    => "https://www.youtube.com/watch?v=fzzMOMkjm8A"
-					},
-					{
-						:title  => "Can't get enough",
-						:artist => "Jermaine Cole",
-						:url    => "https://www.youtube.com/watch?v=p0L4lA6bS2E"
-					}
-				]
-
-		@video = @videos[params[:id].to_i]
+		@video = Video.find(params[:id])
 	end
+
+	def new
+	end
+
+	def create
+		render :text => "Saving a Video. URL: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
+	end
+
 
 end
