@@ -1,5 +1,7 @@
+<%= link_to "Back to Videos", videos_url %>
+
 <p><%= @video.title %>, <%= @video.artist %></p>
-  <iframe width="560" height="315" src="<%= convert_url(@video.url) %>" frameborder="0" allowfullscreen></iframe>  
+  <iframe width="560" height="315" src="<%= convert_url(@video.url) %>" frameborder="0" allowfullscreen></iframe>
 
 
 <!-- <p><%= @video[:title] %>, <%= @video[:artist] %></p>
