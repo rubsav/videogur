@@ -14,7 +14,7 @@ class VideosController < ApplicationController
 
 	def create
     # make a new video with what video_params returns (which is a method we're calling)
-    	@video = video.new(video_params)
+    	@video = Video.new(video_params)
     		if @video.save
       # if the save for the video was successful, go to index.html.erb
       			redirect_to videos_url
@@ -25,11 +25,11 @@ class VideosController < ApplicationController
   	end
 
   	def edit
-    	@video = video.find(params[:id])
+    	@video = Video.find(params[:id])
   	end
 
   	def update
-    	@video = video.find(params[:id])
+    	@video = Video.find(params[:id])
 
     		if @video.update_attributes(video_params)
       			redirect_to "/videos/#{@video.id}"
@@ -39,7 +39,7 @@ class VideosController < ApplicationController
   	end
 
   	def destroy
-    	@video = video.find(params[:id])
+    	@video = Video.find(params[:id])
     	@video.destroy
     	redirect_to videos_url
   	end
