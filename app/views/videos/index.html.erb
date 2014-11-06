@@ -10,7 +10,14 @@
 
 <h1>Most recent Videos</h1>
 <ul>
-  <% @most_recent_videos.each do |video| %>
+  <% @videos.each do |video| %>
     <li><%= video.title %></li>
   <% end %>
+</ul>
+
+<h1> Month Old Videos </h1>
+<ul>
+<% @old_videos.each do |video| %>
+	<li> <%= video.title %></li>
+	<% end %>
 </ul>
