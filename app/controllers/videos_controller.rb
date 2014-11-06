@@ -1,7 +1,7 @@
 class VideosController < ApplicationController
 
 	def index
-		@videos = Video.all
+		@most_recent_videos = Video.most_recent_five
 	end
 
 	def show

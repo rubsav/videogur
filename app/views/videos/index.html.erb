@@ -7,3 +7,10 @@
 </div>
 <iframe width="560" height="315" src="<%= convert_url(video.url) %>" frameborder="0" allowfullscreen></iframe> 
 <% end %>
+
+<h1>Most recent Videos</h1>
+<ul>
+  <% @most_recent_videos.each do |video| %>
+    <li><%= video.title %></li>
+  <% end %>
+</ul>
