@@ -9,11 +9,24 @@ class VideosController < ApplicationController
 	end
 
 	def new
+		@video = Video.new
 	end
 
-	def create
-		render :text => "Saving a Video. URL: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
-	end
+	 def create
+    # make a new video with what video_params returns (which is a method we're calling)
+    @video = video.new(video_params)
+    if @video.save
+      # if the save for the video was successful, go to index.html.erb
+      redirect_to videos_url
+    else
+      # otherwise render the view associated with the action :new (i.e. new.html.erb)
+      render :new
+    end
+  end
 
+  private
+  def video_params
+    params.require(:video).permit(:artist, :title, :url)
+  end
 
 end
