@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get 'videos/:id' => 'videos#show', as: 'video'
   get 'videos/:id/edit' => "videos#edit", as: "edit_video"
   patch 'videos/:id' => "videos#update"
+  delete 'videos/:id' => 'videos#destroy', as: "delete_video"
 end
